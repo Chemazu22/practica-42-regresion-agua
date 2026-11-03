@@ -27,9 +27,9 @@ Abre la dirección local que Streamlit muestre en la terminal (normalmente `http
 2. Inicia sesión en [share.streamlit.io](https://share.streamlit.io/) con GitHub y elige **Create app**.
 3. Selecciona el repositorio público, la rama `main` y el archivo principal `app.py` (en la raíz).
 4. En **Advanced settings**, selecciona **Python 3.12** y despliega la aplicación.
-5. Cuando esté publicada, abre sus opciones y asigna un subdominio disponible, por ejemplo `practica-42-regresion-agua-mi-nombre`. La dirección pública tendrá la forma `https://practica-42-regresion-agua-mi-nombre.streamlit.app`.
+5. Cuando esté publicada, abre sus opciones y asigna un subdominio disponible, por ejemplo `practica-42-regresion-agua-chemazu22`. La dirección pública tendrá la forma `https://practica-42-regresion-agua-chemazu22.streamlit.app`.
 
-Streamlit instala las bibliotecas declaradas en `requirements.txt`. El subdominio de ejemplo debe sustituirse por el nombre elegido y puede estar ocupado; el enlace real aparece en el panel de la app después del despliegue.
+Streamlit instala las bibliotecas declaradas en `requirements.txt`. El subdominio de ejemplo está personalizado con el usuario de GitHub de esta publicación; si no está disponible, elige otro y consulta la dirección final en el panel de la app.
 
 ## Contenido de las pestañas
 
