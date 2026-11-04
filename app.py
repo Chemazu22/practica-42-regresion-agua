@@ -399,3 +399,26 @@ with tab_simulador:
         f"Intervalo de predicción para una observación nueva al {(1-alpha)*100:.0f}% de confianza; "
         "el consumo total se calcula como CPC predicho × número de personas."
     )
+# Resultados de referencia transcritos del PDF; no corresponden al ajuste de esta muestra.
+st.info("Resultados del profesor transcritos del PDF de referencia")
+st.caption("Valores informativos copiados del documento entregado por el profesor; las métricas de la app se calculan por separado con la simulación activa.")
+ref_cols = st.columns(4)
+ref_cols[0].metric("R² · referencia", "0.957")
+ref_cols[1].metric("R² ajustado · referencia", "0.955")
+ref_cols[2].metric("RMSE · referencia", "2.0152 lt/hab-día")
+ref_cols[3].metric("Prob(F) · referencia", "2.84e-64")
+st.write("**Shapiro-Wilk:** estadístico 0.9881 · p = 0.5097 &nbsp;&nbsp; | &nbsp;&nbsp; **Durbin-Watson:** 2.0298")
+st.write("**Ecuación reportada:** CPC = 94.49 + 2.48·Temp − 0.79·Humedad − 5.18·Personas + 14.89·Bidón")
+st.subheader("Coeficientes OLS transcritos del PDF")
+coef_profesor = pd.DataFrame(
+    {
+        "coef": [94.4925, 2.4828, -0.7938, -5.1802, 14.8872],
+        "std err": [1.996, 0.052, 0.017, 0.161, 0.407],
+        "t": [47.337, 48.169, -47.530, -32.228, 36.561],
+        "p": ["<0.001"] * 5,
+        "IC 95% inferior": [90.529, 2.380, -0.827, -5.500, 14.079],
+        "IC 95% superior": [98.456, 2.585, -0.761, -4.861, 15.695],
+    },
+    index=["const", "temperatura_max", "humedad_max", "personas_familia", "consumo_bidon_pc"],
+)
+st.dataframe(coef_profesor, width="stretch")
